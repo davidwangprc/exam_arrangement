@@ -44,13 +44,12 @@ st.markdown('<p class="big-font">考试排考管理系统</p>', unsafe_allow_htm
 #     st.markdown('</div>', unsafe_allow_html=True)
 
 @st.cache_data
-def load_data(file_name):
-    file_path = os.path.join('data', file_name)  # 构建文件路径
+def load_data(file_path):
     df = pd.read_excel(file_path)  # 读取数据
     return df
 
 
-df = load_data('1213-1.xlsx')  # 直接读取 data 文件夹中的文件
+df = load_data('data/1213-1.xlsx')  # 直接读取 data 文件夹中的文件
 
 # 创建选择器
 col1, col2 = st.columns([1, 2])
